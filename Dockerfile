@@ -20,6 +20,11 @@ RUN apt install -y ros-${ROS_DISTRO}-xacro  ros-${ROS_DISTRO}-rviz \
     ros-${ROS_DISTRO}-position-controllers \ 
     ros-${ROS_DISTRO}-robot-state-publisher \
     ros-${ROS_DISTRO}-joint-state-controller
+RUN apt update && apt install -y ros-${ROS_DISTRO}-gazebo-ros-control
+RUN apt update && apt install -y ros-${ROS_DISTRO}-joint-trajectory-controller \
+    ros-${ROS_DISTRO}-teleop-twist-keyboard \
+    ros-${ROS_DISTRO}-rqt \
+    ros-${ROS_DISTRO}-rqt-common-plugins 
 
 
 COPY . $DESTIN/src
